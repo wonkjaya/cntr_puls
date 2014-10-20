@@ -1,0 +1,35 @@
+<?php
+
+function get_content_menu_atas($menu1,$menu2){
+ echo  "<div>
+		<ul class='breadcrumb'>
+			<li>
+				<a href='#'>".$menu1."</a> <span class='divider'>/</span>
+			</li>
+			<li>
+				<a href='#'>".$menu2."</a>
+			</li>
+		</ul>
+	</div>";
+}
+
+function get_footer_content(){
+echo '<footer>
+		<p class="pull-left">&copy; <a href="#" target="_blank">REZSTORE</a> '.date('Y').'</p>
+		<p class="pull-right">Powered by: <a href="#">Rohman Ahmad</a></p>
+	</footer>';
+}
+
+function autocomplete_userAgent(){
+  $a=array("'sdasd'","xvasd","bsasd","awasd","aqasd","'awasd'");
+  foreach($a as $r){
+   $r .=','.$r;
+  }
+  return $r;
+}
+
+
+
+
+
+//end of file table-helper.php
