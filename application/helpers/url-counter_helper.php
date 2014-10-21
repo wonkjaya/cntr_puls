@@ -12,9 +12,9 @@ function baseUrlCounter($type,$object){
 
 function siteUrlCounter($method,$query=''){
  if($query == ""){
-   $site=site_url('pulsa/main/'.$method);
+   $site=site_url('pulsa/'.$method);
  }else{
-   $site=site_url('pulsa/main/'.$method).'?'.$query;
+   $site=site_url('pulsa/'.$method).'?'.$query;
  }
  return $site;
 }

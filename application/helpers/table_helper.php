@@ -73,13 +73,13 @@ function get_table_content_of_deposit($datas,$val=""){
  		$link="sendAgain('$ID','#sendAgain$no',$no);";
  		$id="id='sendAgain$no'";
  		$status="<b style='color:red;'>Not Send</b>";
- 		$object="<i class='icon-refresh icon-black' onclick=".$link." title='Kirim Ulang'></i>";
+ 		$object="<i class='icon-refresh icon-black' title='Kirim Ulang'></i>";
  		$remove= "onclick=deleteRecord('$ID','#sendAgain$no');";
  	}elseif($st==1){
  		$link="Success('$ID');";
  		$id='';
  		$status="<b style='color:green;' >Terkirim</b>";
- 		$object="<i class='icon-edit icon-black' onclick=".$link." title='Terkirim'></i>"; 
+ 		$object="<i class='icon-edit icon-black' title='Terkirim'></i>"; 
  		$remove= "onclick=denied();";
  	}elseif($st==3){ //status dalam keadaan sedang menunggu status pesan terkirim Pada perangkat 
  		$link="";
@@ -91,7 +91,7 @@ function get_table_content_of_deposit($datas,$val=""){
  		$link="cancel('$ID','#cancel$no',$no);";
  		$id="id='cancel$no'";
  		$status="<b style='color:yellow;'>Pending</b>";
- 		$object="<i class='icon-minus-sign icon-black' onclick=".$link." title='Batalkan'></i>";
+ 		$object="<i class='icon-minus-sign icon-black' title='Batalkan'></i>";
  		$remove= "onclick=deleteRecord('$ID','#cancel$no');";
  		
  	}
@@ -261,7 +261,7 @@ function edit_provider($datas){
  	$nama=form_input('nama',$r->nama_provider,'');
  	$nomor=form_input('nomor',$r->nomor,'');
  	$st=form_dropdown('status',array('0'=>'Deactive','1'=>'Active'),$r->status);
- 	$submit=form_submit('submit','Update');
+ 	$submit=form_submit('submit','Update','class="btn btn-primary" ');
  	$sisa=form_input('saldo',$r->sisa_saldo);
  	echo form_open();
  	echo "<tr> 
@@ -311,7 +311,7 @@ function get_register_references($data){
  	$prefix=form_input('prefix',"",'placeholder="0876"');
  	$kode=form_dropdown('kode_provider',$d,'');
  	$st=form_dropdown('status',array('0'=>'Deactive','1'=>'Active'),1);
- 	$submit=form_submit('submit','Simpan');
+ 	$submit=form_submit('submit','Simpan',' class="btn btn-primary"');
  	echo form_open();
  	echo "<tr> 
  		<td>Prefix</td>		<td>:</td>	<td>".$prefix."</td> 
@@ -320,7 +320,7 @@ function get_register_references($data){
  		</tr><tr>
  		<td>Status</td>		<td>:</td>	<td>".$st."</td>
  		</tr><tr>
- 		<td></td>		<td></td>	<td>".$submit."<a class='btn' onclick='history.go(-1);'>Cancel</a></td>
+ 		<td></td>		<td></td>	<td>".$submit." <a class='btn' onclick='history.go(-1);'>Cancel</a></td>
  		</tr>";
  	echo form_close();
  echo "</table>";

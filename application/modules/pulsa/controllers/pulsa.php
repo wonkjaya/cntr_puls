@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Main extends CI_Controller {
+class Pulsa extends CI_Controller {
 
 	function __construct(){
 	 parent::__construct();
@@ -18,7 +18,7 @@ class Main extends CI_Controller {
 	function check_session($state=0){
 	 $user=$this->session->userdata('user_kasir');
 	 if($state==0){
-	  if ($user=="")redirect('pulsa/main/login'); 
+	  if ($user=="")redirect(siteUrlCounter('login')); 
 	 }
 	}
 	
@@ -28,8 +28,7 @@ class Main extends CI_Controller {
 	
 	public function index()
 	{
-		$user=$this->get_session();
-		$this->load->view('layar_utama');
+		$this->view_transaksi_deposit();
 	}
 	
 	function check_login($username,$password){
@@ -41,7 +40,7 @@ class Main extends CI_Controller {
 		  foreach($cek->result() as $r){echo $pass=$this->encrypt->decode($r->password);}
 		   if($pass == $password){
 			  $this->set_userdata($username);
-			  redirect("pulsa/main/view_transaksi_deposit");
+			  redirect(siteUrlCounter("view_transaksi_deposit"));
 		   }else{}
 		 }
 		return $err;
@@ -80,7 +79,7 @@ class Main extends CI_Controller {
 		 $username=$this->input->post('username');
 		 $password=$this->input->post('password');
 		}else{
-		 redirect('pulsa/main');
+		 redirect(siteUrlCounter(''));
 		}
 	}
 	
@@ -513,7 +512,7 @@ class Main extends CI_Controller {
 	  $kode=$this->input->post('kode_provider');
 	  $st=$this->input->post('status');
 	  $this->mpulsa->insert_new_reference($prefix,$kode,$st);
-	  redirect('pulsa/main/numberReferences');
+	  redirect(siteUrlCounter('numberReferences'));
 	 }
 	 $this->load->helper('form');
 	 $data['title']="New Referensi Nomor";

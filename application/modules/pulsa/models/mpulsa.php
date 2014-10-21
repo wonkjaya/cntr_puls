@@ -156,7 +156,7 @@ class Mpulsa extends CI_Model{
    }
  }
  
- function insert_newProvider($kode,$nama,$saldo,$state){
+ function insert_newProvider($kode,$nama,$nomor,$saldo,$state){
   $kode=$this->db->escape($kode);
   $nama=$this->db->escape($nama);
   $nomor=$this->db->escape($nomor);

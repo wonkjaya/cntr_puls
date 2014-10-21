@@ -40,12 +40,6 @@ if(isset($edit_data)){
 }
  ?>
 
-			<noscript>
-				<div class="alert alert-block span10">
-					<h4 class="alert-heading">Warning!</h4>
-					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
-				</div>
-			</noscript>
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
@@ -109,7 +103,7 @@ if(isset($edit_data)){
 								<div class="control-group">
 								  <label class="control-label" for="typeahead">Saldo Awal</label>
 								  <div class="controls">
-									<input type="text" name="saldo" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" data-source="<?php  ?>" value="<?php echo $saldo; ?>">
+									<input type="number" name="saldo" class="span6 typeahead" id="number"  onkeyup="change_format();" value="<?php echo $saldo; ?>">
 								  </div>
 								</div>
 								<?php echo $activated; ?>
@@ -131,6 +125,13 @@ if(isset($edit_data)){
 		<?php get_footer_content(); ?>
 		
 	</div><!--/.fluid-container-->
-		
+	<script>
+	
+	function change_format(){
+	 var  number=document.getElementById("number");
+		number.value=number.value.format(2, 3, '.', ',');
+	}
+	
+	</script>	
 </body>
-</html><d
+</html>

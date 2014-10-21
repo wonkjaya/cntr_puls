@@ -94,7 +94,7 @@ if(isset($edit)){
 								  </div>
 								</div>
 								<div class="control-group">
-								  <label class="control-label" for="typeahead">Sisa Saldo</label>
+								  <label class="control-label" for="typeahead">Nomor Provider</label>
 								  <div class="controls">
 									<input type="text" name='nomor' autocomplete=off class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" value="<?php echo $nomor; ?>">
 								  </div>

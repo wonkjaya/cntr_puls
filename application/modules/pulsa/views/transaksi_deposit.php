@@ -11,8 +11,8 @@
 	
 	function cancel(ID,classname,no){
 	 var url="<?php echo siteUrlCounter('cancel_deposit','id="+ ID +"&classno="+ no +"'); ?>";
-	 var conf=confirm("Cancel Transaksi dengan id= " + ID + classname +"???");
-	 if (conf == true){
+	// var conf=confirm("Cancel Transaksi dengan id= " + ID + classname +"???");
+	 if (confirm("Cancel Transaksi dengan id= " + ID + classname +"???") === true){
 	  execution_script(classname,url);
 	  $(classname).attr("id","sendAgain" + no);
 	 }
@@ -68,7 +68,18 @@
 		
 	</div><!--/.fluid-container-->
 
+<script>
+Number.prototype.format = function(n, x, s, c) {
+    var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\D' : '$') + ')',
+        num = this.toFixed(Math.max(0, ~~n));
+    
+    return (c ? num.replace('.', c) : num).replace(new RegExp(re, 'g'), '$&' + (s || ','));
+};
 
+$("#number").onChange(function (){
+	numbers[i].format(2, 3, '.', ',')
+});
+</script>
 		
 </body>
 </html>
