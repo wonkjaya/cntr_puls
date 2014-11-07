@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "pulsa/main";
+$route['default_controller'] = "pulsa";
 $route['404_override'] = '';
 
 

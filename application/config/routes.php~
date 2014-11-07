@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "chatapi/API";
+$route['default_controller'] = "pulsa/main";
 $route['404_override'] = '';
 
 

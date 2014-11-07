@@ -48,7 +48,6 @@ define('T_TRTOP','transaksi_topup');
 define('T_TRASH','trash_items');
 define('T_TYTRX','trxType');
 define('T_LOG','log');
-define('T_NOMOR','nomor');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
