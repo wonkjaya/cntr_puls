@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.10.1deb1
+-- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Waktu pembuatan: 20. Juli 2014 jam 07:31
--- Versi Server: 5.5.37
--- Versi PHP: 5.3.10-1ubuntu3.11
+-- Generation Time: Nov 07, 2014 at 10:15 AM
+-- Server version: 5.5.40-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.5
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `agents`
+-- Table structure for table `agents`
 --
 
 CREATE TABLE IF NOT EXISTS `agents` (
@@ -37,16 +37,16 @@ CREATE TABLE IF NOT EXISTS `agents` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `agents`
+-- Dumping data for table `agents`
 --
 
 INSERT INTO `agents` (`user_agent`, `nomorHp`, `name`, `code`, `saldo`, `activated`) VALUES
-('REZ-0010', '081299122149', 'Riancell', '07954', 400000, 1),
+('REZ-0010', '081299122149', 'Riancell', '07954', 400000, 0),
 ('REZ-0012', '089778776775', 'salwacell', '39471', 200000, 1),
 ('REZ-0013', '087665100001', 'nurhasanah', '95384', 234342, 1),
 ('REZ-0014', '034199822', 'makmurcell', '80032', 120000, 1),
 ('REZ-0015', '081224345678', 'selfiacell', '45455', 210000, 1),
-('REZ-0016', '0897889887', 'rohmanCell', '89808', 80000, 1),
+('REZ-0016', '0897889887', 'rohmanCell', '89808', 5080000, 1),
 ('REZ-0019', '0857887667', 'Riskocell', '49602', 230000, 1),
 ('REZ-0020', '08766776001', 'bobycell', '89777', 40788, 1),
 ('REZ-0021', '082988809213', 'gober Cel', '21902', 300000, 2);
@@ -54,7 +54,7 @@ INSERT INTO `agents` (`user_agent`, `nomorHp`, `name`, `code`, `saldo`, `activat
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `config`
+-- Table structure for table `config`
 --
 
 CREATE TABLE IF NOT EXISTS `config` (
@@ -66,16 +66,16 @@ CREATE TABLE IF NOT EXISTS `config` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data untuk tabel `config`
+-- Dumping data for table `config`
 --
 
 INSERT INTO `config` (`ID`, `kode`, `nama`, `value`) VALUES
-(1, 'SAL_SERV', 'saldo_server', '6498913');
+(1, 'SAL_SERV', 'saldo_server', '11484480');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `deposit`
+-- Table structure for table `deposit`
 --
 
 CREATE TABLE IF NOT EXISTS `deposit` (
@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `deposit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `deposit`
+-- Dumping data for table `deposit`
 --
 
 INSERT INTO `deposit` (`ID_deposit`, `tanggal_deposit`, `username`, `user_agent`, `nominal`, `status`) VALUES
@@ -98,12 +98,14 @@ INSERT INTO `deposit` (`ID_deposit`, `tanggal_deposit`, `username`, `user_agent`
 ('DEP-00000000003', '2014-07-13 08:53:29', 'root', 'REZ-0013', 2000000, 2),
 ('DEP-00000000004', '2014-07-13 08:53:40', 'root', 'REZ-0020', 90000, 2),
 ('DEP-00000000006', '2014-07-13 09:04:15', 'root', 'REZ-0010', 70000, 2),
-('DEP-00000000007', '2014-07-13 10:25:25', 'root', 'REZ-0016', 5000000, 2);
+('DEP-00000000007', '2014-07-13 10:25:25', 'root', 'REZ-0016', 5000000, 0),
+('DEP-00000000008', '2014-11-07 09:50:47', 'rohman', 'REZ-0010', 6777, 2),
+('DEP-00000000009', '2014-11-07 09:52:50', 'rohman', 'REZ-0012', 7656, 2);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kasir`
+-- Table structure for table `kasir`
 --
 
 CREATE TABLE IF NOT EXISTS `kasir` (
@@ -115,18 +117,38 @@ CREATE TABLE IF NOT EXISTS `kasir` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
--- Dumping data untuk tabel `kasir`
+-- Dumping data for table `kasir`
 --
 
 INSERT INTO `kasir` (`ID_kasir`, `username`, `password`, `kasir_name`) VALUES
 (4, 'rohim', 'TIgPM15iK2tIqO0N7GdPSAN3KRO+YFRAsMPnVS3Le3imshQs8f9CgZP0pP/rSfPt7wvzbifgNnspUBSntdqIkg==', ''),
-(5, 'rohman', 'Vh7/ldT1+ACNt7+jYQ7g0exlbypX9YGt8GKuFYyUAyD+RqoeD0XtFBnO4UqcUFk4VnESNugYveUGut8+71SeEA==', ''),
+(5, 'rohman', 'JZyXBxLYbyEcb9WNjrQPwvD3Jb7ScaDxaP7rf7hv535fp+D6hCQyc3C9PwdHe0JSbd5meT3MrqdKVqP95fw+XA==', ''),
 (6, 'root', 'FCkrXxDaFDjoQYa5NvtjEgv4TFV1pM1AZgCt0A7yIxQqp9hCfJdiaWIwoXQuCC7qdIomdXch9neD3NrcJzGPNA==', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `messages`
+-- Table structure for table `log`
+--
+
+CREATE TABLE IF NOT EXISTS `log` (
+  `log_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(30) NOT NULL,
+  `activity` tinytext NOT NULL,
+  PRIMARY KEY (`log_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `log`
+--
+
+INSERT INTO `log` (`log_ID`, `user`, `activity`) VALUES
+(1, 'rohman', 'Input transaksi baru dengan id=DEP-00000000009,agent=REZ-0012, nominal = 7656');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
 --
 
 CREATE TABLE IF NOT EXISTS `messages` (
@@ -136,20 +158,22 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `message` text NOT NULL,
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`ID_message`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
--- Dumping data untuk tabel `messages`
+-- Dumping data for table `messages`
 --
 
 INSERT INTO `messages` (`ID_message`, `send_to`, `sender`, `message`, `status`) VALUES
 (7, 'REZ-0010', 'GATOT', 'Success!!!. Transaksi Deposit dengan Nominal: 70000 Berhasil Dilakukan Pada tanggal 13-Jul-2014 10:04:15 dengan User REZ-0010', 0),
-(8, 'REZ-0016', 'GATOT', 'Success!!!. Transaksi Deposit dengan Nominal: 5000000 Berhasil Dilakukan Pada tanggal 13-Jul-2014 11:25:25 dengan User REZ-0016', 0);
+(8, 'REZ-0016', 'GATOT', 'Success!!!. Transaksi Deposit dengan Nominal: 5000000 Berhasil Dilakukan Pada tanggal 13-Jul-2014 11:25:25 dengan User REZ-0016', 0),
+(9, 'REZ-0010', 'GATOT', 'Success!!!. Transaksi Deposit dengan Nominal: 6777 Berhasil Dilakukan Pada tanggal 07-Nov-2014 9:50:47 dengan User REZ-0010', 0),
+(10, 'REZ-0012', 'GATOT', 'Success!!!. Transaksi Deposit dengan Nominal: 7656 Berhasil Dilakukan Pada tanggal 07-Nov-2014 9:52:50 dengan User REZ-0012', 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `provider`
+-- Table structure for table `provider`
 --
 
 CREATE TABLE IF NOT EXISTS `provider` (
@@ -162,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `provider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `provider`
+-- Dumping data for table `provider`
 --
 
 INSERT INTO `provider` (`kode_provider`, `nama_provider`, `nomor`, `sisa_saldo`, `status`) VALUES
@@ -177,7 +201,7 @@ INSERT INTO `provider` (`kode_provider`, `nama_provider`, `nomor`, `sisa_saldo`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `transaksi_topup`
+-- Table structure for table `transaksi_topup`
 --
 
 CREATE TABLE IF NOT EXISTS `transaksi_topup` (
@@ -193,7 +217,7 @@ CREATE TABLE IF NOT EXISTS `transaksi_topup` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `trash_items`
+-- Table structure for table `trash_items`
 --
 
 CREATE TABLE IF NOT EXISTS `trash_items` (
@@ -201,10 +225,10 @@ CREATE TABLE IF NOT EXISTS `trash_items` (
   `table_name` varchar(30) NOT NULL,
   `backup` text NOT NULL,
   PRIMARY KEY (`ID_trash`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
--- Dumping data untuk tabel `trash_items`
+-- Dumping data for table `trash_items`
 --
 
 INSERT INTO `trash_items` (`ID_trash`, `table_name`, `backup`) VALUES
@@ -218,12 +242,13 @@ INSERT INTO `trash_items` (`ID_trash`, `table_name`, `backup`) VALUES
 (23, 'agents', 'INSERT INTO `agents` (`user_agent`,`name`,`code`,`saldo`) VALUES (''REZ-0006'',''Rohmincell'',''35744'',''787777'')'),
 (24, 'agents', 'INSERT INTO `agents` (`user_agent`,`name`,`code`,`saldo`) VALUES (''REZ-0011'',''345345'',''09205'',''345354'')'),
 (25, 'agents', 'INSERT INTO `agents` (`user_agent`,`name`,`code`,`saldo`) VALUES (''REZ-0008'',''Sheilacell'',''56655'',''120000'')'),
-(26, 'agents', 'INSERT INTO `agents` (`user_agent`,`name`,`code`,`saldo`) VALUES (''REZ-0009'',''winacell'',''87107'',''200000'')');
+(26, 'agents', 'INSERT INTO `agents` (`user_agent`,`name`,`code`,`saldo`) VALUES (''REZ-0009'',''winacell'',''87107'',''200000'')'),
+(27, 'agents', 'INSERT INTO `agents` (`user_agent`,`name`,`code`,`saldo`) VALUES (''REZ-0022'',''nkjk'',''29942'',''9987990'')');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `trxType`
+-- Table structure for table `trxType`
 --
 
 CREATE TABLE IF NOT EXISTS `trxType` (
@@ -237,7 +262,7 @@ CREATE TABLE IF NOT EXISTS `trxType` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `trxType`
+-- Dumping data for table `trxType`
 --
 
 INSERT INTO `trxType` (`ID_jenis`, `kode_provider`, `nominal`, `harga_beli`, `harga_jual`, `status`) VALUES
